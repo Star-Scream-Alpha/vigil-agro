@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nashik Grapes Decision Report</title>
+  <style>
+:root {
+  --bg: #f4efe4;
+  --paper: #fffdf7;
+  --paper-2: #fbf6eb;
+  --ink: #151e26;
+  --muted: #63707a;
+  --line: #d8cec0;
+  --line-strong: #b9aa98;
+  --blue: #123f56;
+  --green: #375b4d;
+  --red: #943c2d;
+  --gold: #a87a2d;
+  --wash-blue: #e5eef2;
+  --wash-green: #e7eee6;
+  --wash-red: #f3e1d9;
+  --shadow: 0 28px 70px rgba(35, 28, 20, 0.13);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.58;
+}
+.page {
+  width: min(1180px, calc(100vw - 44px));
+  margin: 34px auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.inner { padding: 52px 64px 64px; }
+.hero {
+  padding: 66px 64px 52px;
+  border-bottom: 1px solid var(--line);
+  border-top: 8px solid var(--ink);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(18, 63, 86, 0.13), transparent 30%),
+    linear-gradient(135deg, #fffdf7 0%, #f1e8d8 100%);
+}
+.eyebrow {
+  color: var(--green);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+h1 {
+  font-size: clamp(48px, 5.4vw, 76px);
+  line-height: 0.93;
+  max-width: 980px;
+}
+h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.subtitle {
+  margin-top: 20px;
+  font-size: 21px;
+  color: var(--blue);
+  font-weight: 700;
+}
+.tagline {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 15px;
+}
+.hard-statement {
+  margin-top: 26px;
+  padding: 18px 22px;
+  max-width: 760px;
+  color: var(--paper);
+  background: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.18;
+}
+.grid {
+  display: grid;
+  gap: 22px;
+}
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.metric {
+  padding: 20px 18px 18px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--blue);
+  background: rgba(255,255,255,0.75);
+}
+.metric strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 33px;
+  color: var(--blue);
+  line-height: 1;
+}
+.metric span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+}
+.section:last-child { border-bottom: 0; }
+.section-kicker {
+  color: var(--green);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.section-intro {
+  max-width: 820px;
+  color: var(--muted);
+  font-size: 16px;
+  margin: 0 0 26px;
+}
+.divider-concept {
+  margin: 40px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-strong);
+  color: var(--blue);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.card {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--green);
+  background: var(--paper-2);
+  padding: 24px;
+}
+.card p { margin: 0; }
+.callout {
+  border-left: 6px solid var(--red);
+  padding: 20px 24px;
+  background: var(--wash-red);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.insight {
+  margin-top: 24px;
+  padding: 15px 18px;
+  border-left: 5px solid var(--gold);
+  background: #f8efd9;
+  color: var(--ink);
+  font-weight: 760;
+}
+.insight span {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  margin-right: 8px;
+}
+.implication {
+  margin-top: 14px;
+  padding: 13px 16px;
+  background: var(--wash-blue);
+  border-left: 4px solid var(--blue);
+  font-weight: 700;
+}
+.trigger {
+  color: var(--red);
+  font-weight: 850;
+}
+.note {
+  color: var(--muted);
+  font-size: 14px;
+}
+ul.clean {
+  padding-left: 18px;
+  margin: 0;
+}
+ul.clean li { margin: 11px 0; }
+.executive-list {
+  display: grid;
+  gap: 13px;
+}
+.executive-list div {
+  padding: 16px 18px;
+  background: var(--paper-2);
+  border-left: 4px solid var(--green);
+}
+.executive-list strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.2px;
+  margin-top: 16px;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+th {
+  text-align: left;
+  background: var(--ink);
+  color: white;
+  padding: 13px 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+td {
+  border: 1px solid var(--line);
+  padding: 14px;
+  vertical-align: top;
+}
+tr:nth-child(even) td { background: #fbf6ee; }
+td:first-child { font-weight: 750; color: var(--blue); }
+.decision-table td:nth-child(3),
+.decision-table td:nth-child(4) { background: rgba(229, 238, 242, 0.45); }
+.chart {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--line);
+  background: white;
+}
+.caption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.figure-block {
+  margin-top: 22px;
+}
+.figure-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  color: var(--blue);
+  margin: 0 0 10px;
+}
+.subfigure-label {
+  margin-bottom: 10px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+.appendix-steps {
+  margin: 0;
+  padding-left: 20px;
+}
+.appendix-steps li {
+  margin: 10px 0;
+}
+.flow {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  align-items: stretch;
+}
+.flow div {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--green);
+  padding: 15px 10px;
+  text-align: center;
+  background: var(--paper-2);
+  font-size: 13px;
+  font-weight: 700;
+}
+.formula {
+  padding: 16px 18px;
+  background: var(--wash-blue);
+  border-left: 4px solid var(--blue);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue);
+}
+.placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.placeholder {
+  border: 1px dashed var(--line-strong);
+  background: linear-gradient(135deg, #fffdf7 0%, #f1ebdf 100%);
+  min-height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 22px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  color: var(--muted);
+}
+.mini-table td:first-child { color: var(--ink); font-weight: 700; }
+.links a {
+  display: inline-block;
+  margin: 6px 12px 6px 0;
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+@media print {
+  body { background: white; }
+  .page {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .section { break-inside: auto; }
+  .figure-block, table, .card, .callout, .insight { break-inside: avoid; }
+}
+@media (max-width: 850px) {
+  .inner, .hero { padding-left: 24px; padding-right: 24px; }
+  .grid-2, .grid-3, .grid-4, .metrics, .flow, .placeholder-grid, .legend-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<main class="page">
+  <section class="hero">
+    <div class="eyebrow">Agriculture risk intelligence memo</div>
+    <h1>Nashik Grapes (2023) Retrospective AOI-Level Vegetation Underperformance Analysis</h1>
+    <div class="subtitle">Satellite-derived canopy deviation relative to the 2020-2022 aligned baseline</div>
+    <div class="tagline">Structured retrospective evidence memo for decision-timing support</div>
+    <div class="hard-statement">In retrospective analysis, persistent AOI-level vegetation divergence is identifiable from 2023-10-09, approximately 158 days before the nominal harvest anchor.</div>
+    
+<div class="metrics">
+  <div class="metric"><strong>2023-10-09</strong><span>Earliest retrospective divergence date</span></div>
+  <div class="metric"><strong>158 days</strong><span>To nominal harvest anchor</span></div>
+  <div class="metric"><strong>13.3%</strong><span>Final pre-harvest proxy</span></div>
+  <div class="metric"><strong>186 / 229</strong><span>Scenes retained after filtering</span></div>
+</div>
+
+  </section>
+  <div class="inner">
+    <section class="section">
+      <div class="section-kicker">Executive Summary</div>
+      <h2>Key findings for operators, insurers, and analysts</h2>
+      <p class="section-intro">This report evaluates AOI-level vegetation underperformance in the Nashik grape belt using Sentinel-2 time series. The logic is traceable from acquisition through aligned baseline comparison to external timing consistency checks. The inference is AOI-level and based on a vineyard-likely canopy subset, not on parcel boundaries.</p>
+      <div class="executive-list">
+        <div><strong>Observation</strong>The 2023 AOI-level vegetation trajectory is below the aligned 2020-2022 baseline under weekly comparison. This statement is restricted to canopy condition and does not estimate yield directly.</div>
+        <div><strong>Retrospective detection timing</strong>In retrospective analysis, the earliest persistent divergence is identifiable from <span class="trigger">2023-10-09</span>, approximately 158 days before the nominal harvest anchor.</div>
+        <div><strong>Evidence basis</strong>This interpretation is supported by three independent layers: temporal persistence, multi-index agreement, and consistency with external stress-event timing.</div>
+        <div><strong>Decision use</strong>The result is relevant for earlier review of sourcing, exposure management, inspection, and claims preparation. It does not predict prices and it does not quantify parcel-level damage.</div>
+      </div>
+      <div class="insight"><span>Insight</span>The report is strongest as a retrospective canopy-condition timing analysis, not as a market or yield forecast.</div>
+      <div class="divider-concept">The following sections connect measurement, validation, and decision use.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Problem Statement</div>
+      <h2>The central risk is delayed recognition of biological stress</h2>
+      <p class="section-intro">Traditional indicators such as arrivals, prices, export flows, and claims are typically downstream expressions of agronomic conditions. The operational question is whether crop-condition deterioration is visible early enough to improve decision timing before optionality narrows. This report evaluates timing of canopy deviation, not price forecasting.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Risk under evaluation</h3>
+          <p>Detect crop underperformance before contracts, procurement, insurance, or supply decisions become materially more expensive to adjust.</p>
+          <div class="implication">Implication: earlier biological evidence expands the decision window.</div>
+        </div>
+        <div class="card">
+          <h3>Why conventional signals lag</h3>
+          <p>Economic indicators are downstream expressions of agronomic conditions. Satellite observations record canopy condition before those downstream adjustments become visible. This inference is temporal, not causal for price formation.</p>
+          <div class="implication">Implication: waiting for market confirmation increases exposure to late reaction.</div>
+        </div>
+      </div>
+      <div class="insight"><span>Insight</span>The primary value of the system is timing of recognition, not price forecasting.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Research Framing</div>
+      <h2>Research Objective and Framing</h2>
+      <p class="section-intro">The report is framed as a retrospective remote-sensing test of whether persistent vegetation deviation functions as an early proxy for seasonal underperformance under a defined baseline comparison. The proxy reflects canopy condition, not labeled yield, and the analysis is retrospective rather than a claim of real-time certainty on the first date of divergence.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Hypothesis</h3>
+          <p>Persistent vegetation index deviation can act as an early proxy for crop underperformance.</p>
+        </div>
+        <div class="card">
+          <h3>Research question</h3>
+          <p>Can satellite-derived vegetation signals detect agronomic stress before market signals emerge?</p>
+        </div>
+        <div class="card">
+          <h3>Approach</h3>
+          <ul class="clean">
+            <li>Multi-year NDVI baseline comparison</li>
+            <li>Weekly temporal aggregation</li>
+            <li>Cross-validation with weather and reported damage events</li>
+          </ul>
+        </div>
+      </div>
+      <div class="insight"><span>Insight</span>The analysis tests an explicit biological early-warning hypothesis, but the October signal should be read as a retrospective earliest divergence date unless operational alert logic is demonstrated separately.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Methodology</div>
+      <h2>How the signal is constructed and validated</h2>
+      <p class="section-intro">The method converts raw satellite observations into weekly crop-health trajectories, compares the target season against aligned baseline behavior, and tests whether the observed deviation is consistent with independent evidence of agronomic stress. Cause, mechanism, observation, and scope are kept explicit throughout.</p>
+      <div class="grid grid-4">
+        <div class="card"><h3>Data sources</h3><p>Sentinel-2 vegetation indices, weather-event reports, crop-damage reporting, and harvest-window context.</p><div class="implication">Implication: the evidence stack is multi-source by design.</div></div>
+        <div class="card"><h3>Signal construction</h3><p>Weekly target-season vegetation trajectory compared against the 2020-2022 baseline.</p><div class="implication">Implication: deviations are measured relative to aligned seasonal expectations.</div></div>
+        <div class="card"><h3>Yield linkage</h3><p>Vegetation deviation is interpreted as a canopy underperformance proxy rather than a direct yield estimate. The proxy is biologically grounded but not yield-labeled.</p><div class="implication">Implication: inference remains within defensible biological scope.</div></div>
+        <div class="card"><h3>Validation</h3><p>Persistence, external-event alignment, and multi-index agreement are used to separate structural deviation from measurement noise.</p><div class="implication">Implication: evidentiary strength depends on convergence, not a single metric.</div></div>
+      </div>
+      <div class="flow" style="margin-top:18px;">
+        <div>Weather shock</div><div>Plant stress</div><div>Canopy weakness</div><div>NDVI drop</div><div>Yield / quality risk</div><div>Market reaction</div>
+      </div>
+      <div class="insight"><span>Insight</span>Observed crop stress follows the expected chain of evidence: weather disruption, canopy response, vegetation-index deviation, and delayed market visibility.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Satellite Data & Acquisition</div>
+      <h2>Observation system</h2>
+      <p class="section-intro">The signal is derived from optical satellite imagery processed as a seasonal time series rather than from isolated scenes. Temporal aggregation reduces noise but may smooth short-term shocks.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Platform</h3>
+          <ul class="clean">
+            <li>Satellite: <strong>Sentinel-2</strong> (MSI)</li>
+            <li>Product: <strong>Sentinel-2 L2A</strong> surface reflectance</li>
+            <li>Source: <strong>Planetary Computer STAC</strong></li>
+            <li>Revisit frequency: <strong>~5 days</strong> with the Sentinel-2A/2B constellation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Bands used</h3>
+          <ul class="clean">
+            <li><strong>B08</strong> NIR</li>
+            <li><strong>B04</strong> Red</li>
+            <li><strong>B05</strong> Red-edge</li>
+            <li><strong>B02</strong> Blue</li>
+            <li><strong>SCL</strong> scene classification for cloud and quality masking</li>
+          </ul>
+        </div>
+      </div>
+      <table class="mini-table">
+        <tr><th>Attribute</th><th>Value</th></tr>
+        <tr><td>Operational resolution</td><td>10 m for NDVI bands (B08, B04); 20 m for the red-edge context band B05</td></tr>
+        <tr><td>Acquisition window</td><td>2020-09-01 to 2024-04-30 across baseline and target seasons</td></tr>
+        <tr><td>Role in this report</td><td>Weekly crop-health monitoring for retrospective stress detection and timing analysis</td></tr>
+      </table>
+      <div class="insight"><span>Insight</span>The evidence base comes from repeat observations across the season, not from a single overpass.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Area of Interest</div>
+      <h2>Nashik grape belt coverage</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>AOI definition</h3>
+          <p>Region of interest: <strong>Nashik vineyard belt, Maharashtra, India</strong>.</p>
+          <table class="mini-table" style="margin-top:14px;">
+            <tr><th>Coordinate</th><th>Value</th></tr>
+            <tr><td>West</td><td>73.94</td></tr>
+            <tr><td>South</td><td>20.12</td></tr>
+            <tr><td>East</td><td>74.03</td></tr>
+            <tr><td>North</td><td>20.21</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Regional context</h3>
+          <p>The AOI represents the Nashik grape belt used in this retrospective case. The unit of analysis is AOI-level canopy behavior rather than parcel-level yield estimation. The imagery used later in the report is masked to a vineyard-likely canopy subset because no cadastral parcel registry is included in the workflow. This inference is regional, not parcel-specific.</p>
+          <div class="implication">Implication: the result is appropriate for regional risk monitoring and exposure screening.</div>
+        </div>
+      </div>
+      <div class="insight"><span>Insight</span>The AOI is defined explicitly, which makes the geographic scope traceable and reviewable.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Index Selection</div>
+      <h2>Why NDVI is appropriate for this analysis</h2>
+      <p class="section-intro">Grapes are canopy-driven crops, and seasonal canopy vigor is directly relevant to crop condition. NDVI is therefore an appropriate first-order indicator for this retrospective analysis because canopy stress alters red and near-infrared reflectance. NDVI does not isolate a specific stress driver.</p>
+      <div class="grid grid-3">
+        <div class="card"><h3>Canopy dependence</h3><p>Grape production depends on sustained canopy health through the season.</p></div>
+        <div class="card"><h3>What NDVI captures</h3><p>NDVI is sensitive to leaf density, greenness, and overall canopy vigor.</p></div>
+        <div class="card"><h3>Stress detectability</h3><p>Stress reduces chlorophyll and canopy performance, which changes reflectance in the red and NIR bands.</p></div>
+      </div>
+      <div class="insight"><span>Insight</span>NDVI is biologically relevant here because the crop response under study is expressed through canopy condition.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Vegetation Index Methodology</div>
+      <h2>NDVI and companion indicators</h2>
+      <p class="section-intro">NDVI is the primary signal. EVI and NDRE are used as supporting indices to reduce dependence on a single vegetation measure and to test whether the observed stress generalizes across related canopy metrics. Multi-index agreement strengthens inference but does not identify a unique biophysical cause.</p>
+      <div class="formula">NDVI = (NIR - Red) / (NIR + Red)</div>
+      <div class="grid grid-3" style="margin-top:20px;">
+        <div class="card">
+          <h3>Band mapping</h3>
+          <ul class="clean">
+            <li>NIR: <strong>B08</strong></li>
+            <li>Red: <strong>B04</strong></li>
+            <li>Red-edge support: <strong>B05</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Processing steps</h3>
+          <ul class="clean">
+            <li>Cloud and quality masking via SCL</li>
+            <li>Reflectance scaling and raster alignment</li>
+            <li>Weekly temporal aggregation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Baseline logic</h3>
+          <ul class="clean">
+            <li>Baseline seasons: <strong>2020-2022</strong></li>
+            <li>Target season: <strong>2023</strong></li>
+            <li>Week-by-week alignment across season bins</li>
+          </ul>
+        </div>
+      </div>
+      <div class="insight"><span>Insight</span>Multi-index agreement reduces the likelihood that the observed signal is an artifact of a single metric.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Signal Construction</div>
+      <h2>How deviation was measured</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Periods compared</h3>
+          <ul class="clean">
+            <li>Baseline period: <strong>2020-2022 seasons</strong></li>
+            <li>Target period: <strong>2023 season</strong></li>
+            <li>Season window: <strong>September to April</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Deviation formula</h3>
+          <p>Weekly percentage deviation is computed as:</p>
+          <div class="formula" style="font-size:20px;">(Target - Baseline) / Baseline x 100</div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:20px;">
+        <h3>How the 13.3% was computed</h3>
+        <p>The headline <strong>13.3%</strong> is the final pre-harvest vegetation underperformance proxy. It is computed as the median negative composite percentage deviation in the final <strong>42-day pre-harvest window</strong>, where the composite combines NDVI, EVI, and NDRE deviation signals. This measure reflects late-window canopy condition, not the earliest detection date and not realized yield.</p>
+      </div>
+      <div class="implication">Implication: the 13.3% value is a structured late-window seasonal proxy, not a single-scene NDVI measurement and not an October reading.</div>
+      <div class="insight"><span>Insight</span>The underperformance proxy is derived from repeated pre-harvest observations, not from one date.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Findings</div>
+      <h2>Satellite signal detection</h2>
+      <p class="section-intro">Figure 1 shows sustained deviation from the baseline envelope beginning around 2023-10-09, which is the earliest retrospectively identifiable persistent divergence under the defined weekly comparison. The inference is based on persistence across aligned weeks, not on a single weak scene, and it does not by itself establish real-time operational confirmation on that first date.</p>
+      <div class="grid grid-2">
+        <div class="figure-block">
+          <div class="figure-title">Figure 1. NDVI trajectory relative to baseline</div>
+          <img class="chart" src="./assets/ndvi_baseline_vs_target.png" alt="Figure 1 NDVI trajectory relative to baseline">
+          <p class="caption">Figure 1. Weekly AOI-level NDVI for the 2023 season versus the aligned 2020-2022 baseline envelope. The figure supports a retrospective conclusion that persistent below-baseline divergence is identifiable from around 2023-10-09 under the defined weekly comparison. It does not by itself establish real-time operational confirmation on that first date, and it supports AOI-level inference only.</p>
+        </div>
+        <div>
+          <h3>Decision table</h3>
+          <table class="decision-table">
+            <tr><th>Signal</th><th>Supported interpretation</th><th>Potential decision response</th></tr>
+            <tr><td>Baseline seasons</td><td>2020-2022 establish the expected seasonal vegetation path under aligned weekly comparison.</td><td>Use as reference for normal AOI-level canopy behavior.</td></tr>
+            <tr><td>Earliest retrospective divergence</td><td>Persistent divergence is retrospectively identifiable from around 2023-10-09.</td><td>Review sourcing, field validation, and open exposure earlier in the season.</td></tr>
+            <tr><td>Final late-window proxy</td><td>13.3% below baseline in the defined 42-day pre-harvest window; canopy proxy only.</td><td>Use as late-window severity context, not as the earliest detection date.</td></tr>
+          </table>
+          <div class="implication">Implication: the crop moved off baseline early enough to justify earlier review, but the October date should be read as retrospective earliest divergence rather than guaranteed production alert timing.</div>
+        </div>
+      </div>
+      <div class="insight"><span>Insight</span>The strongest supported timing claim is retrospective earliest persistent divergence from around 2023-10-09.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Signal Robustness</div>
+      <h2>Signal Robustness and Temporal Consistency</h2>
+      <p class="section-intro">Figure 2 summarizes the multi-index stress signal. The evidence is supported by duration as well as magnitude: the target season remains below baseline in <strong>26 valid weekly observations</strong> from <strong>2023-10-09</strong> through <strong>2024-04-22</strong>. Sustained deviation across 26 aligned temporal bins is difficult to explain as a one-date artifact and is more consistent with structural seasonal deviation than with isolated noise.</p>
+      <div class="grid grid-2">
+        <div class="figure-block">
+          <div class="figure-title">Figure 2. Composite stress signal</div>
+          <img class="chart" src="./assets/composite_stress_signal.png" alt="Figure 2 composite stress signal">
+          <p class="caption">Figure 2. Composite deviation score formed from NDVI, EVI, and NDRE deviations. The figure supports persistence and multi-index agreement across the season. The threshold line reflects the report’s internal confirmation rule and is not presented as a formally calibrated statistical boundary.</p>
+        </div>
+        <div class="card">
+          <h3>Robustness interpretation</h3>
+          <ul class="clean">
+            <li>The signal is supported by duration, not isolated observations.</li>
+            <li>Single-scene divergence can result from transient haze, residual cloud, or phenological noise; multi-week persistence is materially harder to explain as artifact.</li>
+            <li>Sustained deviation across 26 aligned temporal bins is more consistent with structural seasonal deviation than with isolated noise.</li>
+            <li>This conclusion is supported by three independent layers: temporal persistence, multi-index agreement, and external event alignment.</li>
+          </ul>
+          <div class="implication">Implication: persistence confirms that the signal is not a one-date anomaly.</div>
+        </div>
+      </div>
+      <div class="insight"><span>Insight</span>Persistence confirms signal is not noise.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Satellite Evidence</div>
+      <h2>Image-based evidence layer</h2>
+      <p class="section-intro">Figure 3 provides the spatial anomaly field, while Figure 4 assembles the baseline-target-anomaly comparison. The false-color panels in Figure 4 are masked to a persistent vineyard-likely canopy subset within the AOI because no parcel registry is present in the repo. The image evidence is interpretive support, not an independent yield measurement.</p>
+      <div class="figure-block">
+        <div class="figure-title">Figure 3. NDVI anomaly map</div>
+        <img class="chart" src="./assets/ndvi_warning_map.png" alt="Figure 3 NDVI anomaly map">
+        <p class="caption">Figure 3. AOI-level NDVI anomaly relative to the baseline reference. The figure supports spatial distribution of canopy anomaly within the AOI. It does not identify parcel-level damage or crop-specific diagnosis on its own.</p>
+      </div>
+      <div class="figure-block">
+        <div class="figure-title">Figure 4. Satellite evidence</div>
+        <div class="placeholder-grid">
+          <div>
+            <div class="subfigure-label">(a) Baseline composite, 2020-2022</div>
+            <img class="chart" src="./assets/baseline_reference_false_color.png" alt="Figure 4a baseline false-color composite">
+            <p class="caption">Figure 4a. Early-October baseline false-color Sentinel-2 composite assembled from acquisitions on 2020-10-06 05:27:09.024000+00:00, 2021-10-11 05:27:39.024000+00:00, 2022-10-01 05:26:51.024000+00:00. Scene-level cloud cover for the input dates ranged from 4.3% to 28.0% before AOI masking. The panel provides visual context for baseline canopy condition under a common display scale and is clipped to a persistent vineyard-likely canopy mask within the AOI, not to parcel boundaries.</p>
+          </div>
+          <div>
+            <div class="subfigure-label">(b) Target image, October 2023</div>
+            <img class="chart" src="./assets/target_signal_false_color.png" alt="Figure 4b target false-color image">
+            <p class="caption">Figure 4b. Target-season false-color Sentinel-2 acquisition from 2023-10-11 05:27:39.024000+00:00. Scene-level cloud cover was 0.8%, and valid AOI coverage remained near complete after filtering. Relative weakening in canopy response is visually consistent with the time-series deviation, but the panel is interpretive support rather than independent proof. This remains a canopy proxy, not a parcel-level crop inventory.</p>
+          </div>
+          <div>
+            <div class="subfigure-label">(c) NDVI anomaly map</div>
+            <img class="chart" src="./assets/ndvi_warning_map.png" alt="Figure 4c NDVI anomaly map">
+            <p class="caption">Figure 4c. Baseline-subtracted NDVI anomaly map for the target season over the AOI. Negative values indicate below-baseline canopy response. The map is supportive of AOI-level anomaly interpretation only.</p>
+          </div>
+        </div>
+        <div class="legend-grid">
+          <div class="card">
+            <h3>Processing note</h3>
+            <p>All images are normalized using consistent reflectance scaling and AOI boundaries.</p>
+          </div>
+          <div class="card">
+            <h3>Legend interpretation</h3>
+            <ul class="clean">
+              <li>False-color red: higher vegetation response</li>
+              <li>Yellow / green tones: reduced vegetation response</li>
+              <li>NDVI anomaly map: negative values indicate below-baseline canopy condition</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="insight"><span>Insight</span>The spatial and image evidence converges with the time-series signal under common AOI boundaries and scaling.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Ground Reality and Market Disconnect</div>
+      <h2>Ground evidence and delayed market expression</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Ground / market reality</h3>
+          <p>Weather and industry reports document vineyard damage across the Nashik grape belt. The mechanism is agronomic disruption followed by canopy impairment, whereas production and market outcomes become visible in the February-April harvest window rather than at the onset of biological stress. This section addresses timing consistency, not market prediction.</p>
+          <div class="implication">Implication: external reports support the stress driver, but economic indicators remain temporally delayed.</div>
+        </div>
+        <div class="callout">Satellite detects biological reality early. Markets reflect economic reality later.</div>
+      </div>
+      <div class="insight"><span>Insight</span>The market disconnect is a timing difference, not a contradiction of the satellite signal.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Evidence and External Validation</div>
+      <h2>Sequence validation</h2>
+      <p class="section-intro"><strong>Observed sequence matches expected crop stress propagation.</strong> Extreme weather events act as the exogenous driver, canopy function is the biological mechanism, vegetation-index deviation is the satellite observation, and harvest visibility is the downstream outcome. NDVI records canopy response but does not isolate a specific stressor, so this section should be read as consistency evidence rather than unique causal proof.</p>
+      <table class="decision-table">
+        <tr><th>Date</th><th>Event</th><th>What it supports</th></tr>
+        <tr><td>2023-03-04 to 2023-03-18</td><td>Unseasonal rain and hail damage reported across the Nashik grape belt.</td><td>Early stress-driver context</td></tr>
+        <tr><td>2023-10-09</td><td>Earliest retrospectively identifiable persistent divergence in the satellite time series.</td><td>First below-baseline canopy divergence under aligned comparison</td></tr>
+        <tr><td>2023-11-27</td><td>Additional rain and hail damage reported in Nashik talukas.</td><td>Continued seasonal stress context after divergence had already emerged retrospectively</td></tr>
+        <tr><td>Final 42-day pre-harvest window</td><td>Window used to compute the 13.3% canopy proxy.</td><td>Source window for the late-window proxy</td></tr>
+        <tr><td>2024-02 to 2024-04</td><td>Harvest window.</td><td>Downstream outcome window</td></tr>
+      </table>
+      <div class="implication">Implication: the observed vegetation signal aligns with independently reported agronomic stress drivers and outcome timing.</div>
+      <div class="insight"><span>Insight</span>Weather → NDVI → harvest timing is the correct causal ordering.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Data Quality & Filtering</div>
+      <h2>Why the retained scene set is defensible</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Discovery</h3>
+          <p><strong>229</strong> Sentinel-2 scenes were discovered for the configured AOI and seasonal window.</p>
+        </div>
+        <div class="card">
+          <h3>Retention</h3>
+          <p><strong>186</strong> scenes were retained for analysis after seasonal and quality filtering.</p>
+        </div>
+        <div class="card">
+          <h3>Filtering</h3>
+          <p><strong>43</strong> scenes were excluded overall, including <strong>11</strong> with low valid-pixel fraction and additional non-retained scenes from season and quality logic.</p>
+        </div>
+      </div>
+      <table class="mini-table">
+        <tr><th>Filter step</th><th>Purpose</th></tr>
+        <tr><td>Scene discovery filter</td><td>Restrict to AOI, season window, and cloud-cover constraints</td></tr>
+        <tr><td>Cloud / quality masking</td><td>Remove invalid pixels before index calculation</td></tr>
+        <tr><td>Minimum valid fraction</td><td>Exclude scenes with insufficient usable AOI coverage</td></tr>
+        <tr><td>Missing-week handling</td><td>Weeks with no usable observations are marked as missing, not silently averaged</td></tr>
+      </table>
+      <div class="implication">Implication: the retained sample is smaller than discovery by design. Quality control is part of the evidentiary method, although filtering can remove short-lived scenes from view.</div>
+      <div class="insight"><span>Insight</span>Filtering improves interpretability by removing scenes that cannot support reliable AOI-level inference.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Alternative Explanations</div>
+      <h2>Evaluation of alternative explanations</h2>
+      <table class="decision-table">
+        <tr><th>Hypothesis</th><th>Evaluation</th></tr>
+        <tr><td>Cloud artifact</td><td>Addressed via cloud masking, valid-pixel filtering, and explicit missing-week handling.</td></tr>
+        <tr><td>Seasonal shift</td><td>Baseline aligned week-by-week across multiple prior seasons.</td></tr>
+        <tr><td>Sensor noise</td><td>Observed across NDVI, EVI, and NDRE rather than a single metric alone.</td></tr>
+        <tr><td>Single anomaly event</td><td>Rejected due to multi-week persistence through the season.</td></tr>
+      </table>
+      <div class="implication">Implication: these alternative explanations do not sufficiently account for the observed signal.</div>
+      <div class="insight"><span>Insight</span>The signal is better explained by structural crop stress than by cloud artifact, sensor noise, seasonal misalignment, or a single anomalous date.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Decision Layer</div>
+      <h2>What the signal enables operationally</h2>
+      <p class="section-intro">Operational value arises when the signal changes the timing of review before downstream indicators catch up. The table below translates the analysis into potential action without extending the interpretation beyond AOI-level canopy evidence.</p>
+      <table class="decision-table">
+        <tr><th>Signal</th><th>Supported interpretation</th><th>Potential decision response</th></tr>
+        <tr><td><span class="trigger">Earliest retrospective divergence</span></td><td>Persistent divergence is retrospectively identifiable around 2023-10-09, approximately 158 days before the nominal harvest anchor.</td><td>Review sourcing, field validation, and open exposure earlier in the season.</td></tr>
+        <tr><td>Persistent multi-week gap</td><td>The signal is supported by duration rather than by a single scene or isolated week.</td><td>Targeted irrigation, nutrition, scouting, and disease review.</td></tr>
+        <tr><td>Final late-window proxy</td><td>13.3% below baseline in the defined 42-day pre-harvest window; canopy proxy only.</td><td>Use as late-window severity context for contract review and exposure management.</td></tr>
+        <tr><td>Confirmed stress</td><td>The stricter internal confirmation rule is first met after the nominal harvest anchor.</td><td>Insurance documentation and post-season review.</td></tr>
+      </table>
+      <div class="implication">Implication: delayed use of the signal increases reliance on late reaction rather than on earlier review of exposure and sourcing options.</div>
+      <div class="insight"><span>Insight</span>The report supports earlier decision timing; it does not claim price prediction or parcel-level loss quantification.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">ROI and Impact</div>
+      <h2>Illustrative commercial relevance</h2>
+      <p class="section-intro">The value case shown below is illustrative only. It does not represent observed avoided loss in the Nashik case. Its purpose is to show the order of magnitude of commercial exposure that earlier decision timing can influence.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Without system</h3>
+          <ul class="clean"><li>Later reaction after arrivals, contracts, or prices make the shortfall more visible.</li><li>Higher spot-market exposure.</li><li>Weaker insurance evidence timeline.</li></ul>
+        </div>
+        <div class="card">
+          <h3>With system</h3>
+          <ul class="clean"><li>Earlier review after the retrospective divergence date of 2023-10-09.</li><li>Reduced open exposure if the signal is actioned.</li><li>Earlier supply diversification and evidence collection.</li></ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px;">Illustrative commercial relevance depends on action timing, not on exact price prediction.</div>
+      <table style="margin-top:18px;">
+        <tr><th>Input</th><th>Illustrative value</th></tr>
+        <tr><td>Annual procurement volume</td><td>5,000 tons</td></tr>
+        <tr><td>Equivalent weight</td><td>5,000,000 kg</td></tr>
+        <tr><td>Illustrative late-market price increase</td><td>₹10–₹25 per kg</td></tr>
+        <tr><td>Illustrative gross price-risk exposure at full volume</td><td>₹5.0 Cr – ₹12.5 Cr</td></tr>
+        <tr><td>Early-action levers</td><td>Pre-contracting / supplier switch / hedging</td></tr>
+      </table>
+      <div class="implication">Implication: commercial value depends on exposure controlled and the timing of response, not on an ability to forecast final price.</div>
+      <div class="insight"><span>Insight</span>The table illustrates scale of exposure that earlier review can influence; it does not report observed avoided loss in the Nashik case.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Technical Limitations</div>
+      <h2>What the satellite layer detects vs what it does not</h2>
+      <p class="section-intro">This system is designed to detect canopy condition and relative biological deviation, not price behavior. That boundary is an analytical strength because it keeps interpretation within the scope supported by the data and constrains overreach in commercial or legal review.</p>
+      <table class="decision-table">
+        <tr><th>Detects</th><th>Does not detect</th></tr>
+        <tr><td>Persistent canopy underperformance</td><td>Final market prices</td></tr>
+        <tr><td>Vegetation stress relative to baseline</td><td>Exact labeled yield</td></tr>
+        <tr><td>Spatial and temporal risk concentration</td><td>Sub-field causes at Sentinel-2 scale without local validation</td></tr>
+        <tr><td>Early decision timing advantage</td><td>Exact disease diagnosis or irrigation diagnosis from NDVI alone</td></tr>
+        <tr><td>AOI-level vegetation response</td><td>Parcel-level management heterogeneity at 10 m / 20 m resolution without parcel masks</td></tr>
+      </table>
+      <div class="callout" style="margin-top:22px;">Satellite signals do not predict price — they reveal reality before markets react.</div>
+      <div class="insight"><span>Insight</span>The model is strongest where earlier evidence matters more than exact outcome certainty.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Inference Scope</div>
+      <h2>Scope of Valid Inference</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>This analysis can conclude</h3>
+          <ul class="clean">
+            <li>The 2023 AOI-level vegetation trajectory is below the 2020-2022 baseline under aligned weekly comparison.</li>
+            <li>A persistent divergence is retrospectively identifiable from around 2023-10-09 and persists across the observed season.</li>
+            <li>The signal is supported by three independent layers: temporal persistence, multi-index agreement, and external event alignment.</li>
+            <li>The 13.3% value is a final pre-harvest canopy proxy computed from the defined late window.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>This analysis cannot conclude</h3>
+          <ul class="clean">
+            <li>Exact parcel-level outcomes within the AOI.</li>
+            <li>Exact realized yield without harvest-linked validation data.</li>
+            <li>Exact market-recognition timing or market-price prediction.</li>
+            <li>The unique causal contribution of any single stressor from NDVI alone.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="implication">Implication: the report supports constrained, traceable inference rather than unconstrained prediction.</div>
+      <div class="insight"><span>Insight</span>Every major claim in the report is bounded by explicit scope, mechanism, and evidence.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Appendix</div>
+      <h2>External source traceability</h2>
+      <p class="section-intro">The report relies on external sources as timing-consistency evidence rather than as direct quantitative calibration inputs. The table below records what each source supports so the validation layer remains reviewable.</p>
+      <table class="decision-table">
+        <tr><th>Source title</th><th>Publisher</th><th>Date</th><th>Supports</th><th>Link</th></tr>
+        <tr><td>Maharashtra grape farmers worried as unseasonal rains, hail wipe out 50,000 acres of vineyards</td><td>Down To Earth</td><td>March 2023</td><td>Early-season weather shock and reported damage scale</td><td>[insert URL]</td></tr>
+        <tr><td>Rain, hail damage grape vineyards, onion crops in Nashik</td><td>Times of India</td><td>2023-11-27</td><td>Additional in-season damage in Nashik talukas</td><td>[insert URL]</td></tr>
+        <tr><td>Disastrous Weather Events Report 2023</td><td>IMD Pune</td><td>2023</td><td>High-volatility weather context across the year</td><td>[insert URL]</td></tr>
+        <tr><td>Grape exports 15 per cent dip likely</td><td>Indian Express</td><td>2023</td><td>Additional agronomic and export-impact context</td><td>[insert URL]</td></tr>
+        <tr><td>Nashik grape</td><td>Wikipedia</td><td>Access date required</td><td>Background context only; not primary evidentiary support</td><td>[insert URL]</td></tr>
+      </table>
+      <div class="implication">Implication: external validation should be read as traceable timing consistency, not as a substitute for parcel-linked field data.</div>
+      <div class="insight"><span>Insight</span>External validation is strongest when each source is tied to a specific supported claim.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Appendix</div>
+      <h2>Reproducibility and Data Pipeline</h2>
+      <p class="section-intro">The workflow is structured so that the analysis can be recreated from the same AOI, date window, and data source definitions. Reproducibility applies to the vegetation-signal workflow, not to external market behavior.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Pipeline steps</h3>
+          <ol class="appendix-steps">
+            <li>Acquire Sentinel-2 L2A imagery</li>
+            <li>Apply cloud masking using SCL</li>
+            <li>Compute NDVI, EVI, NDRE</li>
+            <li>Aggregate weekly medians</li>
+            <li>Construct multi-year baseline</li>
+            <li>Compute deviation vs baseline</li>
+            <li>Validate against external evidence</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Traceability notes</h3>
+          <ul class="clean">
+            <li>Data source: Sentinel-2 (Copernicus / STAC)</li>
+            <li>Tools: Python, raster processing, and geospatial libraries</li>
+            <li>AOI, seasonal window, and filtering logic are explicitly defined in the pipeline configuration</li>
+            <li>Charts and maps are generated from saved CSV and raster outputs rather than hand-drawn summaries</li>
+          </ul>
+        </div>
+      </div>
+      <div class="implication">Implication: the system is structured for reproducibility, traceability, and independent review.</div>
+      <div class="insight"><span>Insight</span>The report is backed by a recreatable pipeline, not a one-off presentation artifact.</div>
+    </section>
+
+    <section class="section links">
+      <h2>Files</h2>
+      <a href="./assets/ndvi_baseline_vs_target.png">Figure 1 NDVI trajectory</a>
+      <a href="./assets/composite_stress_signal.png">Figure 2 composite stress signal</a>
+      <a href="./assets/ndvi_warning_map.png">Figure 3 NDVI anomaly map</a>
+      <a href="./assets/baseline_reference_false_color.png">Figure 4a baseline false-color image</a>
+      <a href="./assets/target_signal_false_color.png">Figure 4b target false-color image</a>
+      <a href="summary.json">summary.json</a>
+      <a href="forensic_report.md">forensic_report.md</a>
+    </section>
+  </div>
+</main>
+
+</body>
+</html>
